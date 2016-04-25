@@ -27,7 +27,7 @@ module.exports = module.exports = generators.Base.extend({
         'babelrc',
         'eslintrc',
         'gitignore',
-        'npmignore'
+        'editorconfig',
       ].forEach(function (fileName) {
         self.copy(fileName, self.componentName + '/.' + fileName);
       });
@@ -36,6 +36,7 @@ module.exports = module.exports = generators.Base.extend({
     copyCoreFiles: function () {
       var self = this;
       [
+        'karma.conf.js',
         '.storybook/config.js',
         '.storybook/webpack.config.js',
         '.scripts/mocha_runner.js',

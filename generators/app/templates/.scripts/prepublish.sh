@@ -8,8 +8,8 @@
 
 echo "=> Transpiling 'src' into ES5 ..."
 echo ""
-rm -rf ./dist
-./node_modules/.bin/babel --ignore tests,stories --plugins "transform-runtime" ./src --out-dir ./dist
+rm -rf ./lib
+./node_modules/.bin/babel --ignore tests,stories --plugins "transform-runtime" ./src --out-dir ./lib
 echo ""
 echo "=> Transpiling completed."
 
