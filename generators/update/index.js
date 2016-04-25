@@ -17,6 +17,8 @@ module.exports = module.exports = generators.Base.extend({
     updateDotFiles: function () {
       var self = this;
       [
+        'karma.conf.js',
+        'webpack.config.js',
         '.storybook/config.js',
         '.storybook/webpack.config.js',
         '.scripts/mocha_runner.js',
