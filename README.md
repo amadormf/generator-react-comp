@@ -1,14 +1,15 @@
-# React CDK
+# React Component Generator
 
 ### Component Development Kit for React
+This is a fork of [react-cdk](https://github.com/kadirahq/react-cdk) with some modifications.
 
-React CDK is not just another React boilerplate. It’s much more than that, and it comes with support from [Kadira](https://github.com/kadirahq).
+* Add [editorconfig](http://editorconfig.org/)
+* Remove .npmignore file and modify package.json to only add lib folder to npm package if you wants add more files to package of npm **files** option in package.json
+* Add [karma](https://karma-runner.github.io/) for test with browser 
+* Add coverage for test with [istanbul](https://github.com/gotwarlost/istanbul) with [isparta](https://github.com/douglasduteil/isparta)
+* Add babel-stage-0, yes I'm early adopter
 
-With React CDK, you can focus on developing your React component or utility while React CDK takes care of all the other stuff.
-
-> Read why [Kadira created React CDK](https://voice.kadira.io/say-hello-to-react-cdk-97cff692e798#.2aaodkb6c).
-
-React CDK comes with following features:
+The feature of React CDK:
 
 * Create a project with a single command.
 * Write your component in ES2015+ syntax.
@@ -33,22 +34,22 @@ React CDK comes with following features:
 
 ## Getting Started
 
-Install React CDK with the following command:
+Install React Comp with the following command:
 
 ```
-npm install -g yo generator-react-cdk
+npm install -g yo generator-react-comp
 ```
 
-> React CDK comes as a [yeoman](http://yeoman.io/) generator, which allows you to scaffold your component quickly.
+> React Comp comes as a [yeoman](http://yeoman.io/) generator, which allows you to scaffold your component quickly.
 
 
 Then, create your first component library with the following command:
 
 ```
-yo react-cdk react-wizard
+yo react-comp react-wizard
 ```
 
-![Creating a project with React CDK](docs/create-project-with-react-cdk.png)
+![Creating a project with React Comp](docs/create-project-with-react-cdk.png)
 
 > React CDK will create a directory called react-wizard with all the files you need to get started.
 
@@ -89,9 +90,10 @@ This is the ideal way to write React tests.
 
 You can run tests with the following commands:
 
-* `npm run testonly` (run tests once)
-* `npm run test-watch` (run tests and watch for changes)
-* `npm test` (run tests and apply lint rules)
+* `npm run test` (run tests once)
+* `npm run test:watch` (run tests and watch for changes)
+* `npm run test:karma` (run test with karma and phantom and return coverage of test)
+
 
 ## Lint Rules
 
@@ -100,7 +102,7 @@ Your project is configured with ESLint based on the [Airbnb JavaScript style gui
 You can apply lint rules with the following commands:
 
 * `npm run lint` (apply lint rules)
-* `npm run lintfix` (apply lint rules and fix some common issues)
+* `npm run lint:fix` (apply lint rules and fix some common issues)
 
 ## Publishing
 
@@ -114,6 +116,7 @@ Now it’s time to publish your component to NPM. Before you publish, make sure 
 If everything is okay, simply publish your component to NPM with the following command:
 
 ```
+npm version [patch || minor || mayor] -m "Comment version, %s"
 npm publish
 ```
 
@@ -126,7 +129,7 @@ You will usually write your stories while you are developing your component. Tha
 Then you can simply deploy it to GitHub Pages with the following command:
 
 ```
-npm run publish-storybook
+npm run storybook:publish
 ```
 
 You can link your Storybook URL inside the README file.
@@ -140,7 +143,7 @@ Here’s a [sample component](https://github.com/kadira-samples/react-button) li
 {
   "scripts": {
     ...
-    "postpublish": "npm run publish-storybook"
+    "postpublish": "npm run storybook:publish"
     ...
   }
 }
@@ -177,13 +180,13 @@ You never need to worry about updating dependencies and build tools. React CDK w
 First, update React CDK with the following command:
 
 ```
-npm install -g generator-react-cdk
+npm install -g generator-react-comp
 ```
 
 Then, visit your project and apply the following command:
 
 ```
-yo react-cdk:update
+yo react-comp:update
 ```
 
 This will update the core build tools and the package.json file for dependencies.
@@ -205,7 +208,7 @@ Sometimes you may want to use cutting-edge JavaScript features. You can simply a
 
 ### Change other dotfiles
 
-You can change any of the dotfiles, including `.gitignore` and `.npmignore`. The React CDK update process won’t update these files.
+You can change any of the dotfiles, including `.gitignore`. The React CDK update process won’t update these files.
 
 ### Customize Storybook
 

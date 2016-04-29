@@ -1,9 +1,13 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Button from '../index';
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
 import sinon from 'sinon';
+import sinonChai from 'sinon-chai';
+
 const { describe, it } = global;
+
+chai.use(sinonChai);
 
 describe('Button', () => {
   it('should show the given text', () => {

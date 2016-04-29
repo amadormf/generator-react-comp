@@ -21,13 +21,13 @@ module.exports = module.exports = generators.Base.extend({
   },
 
   configuring: {
-    copyDotFiles: function() {
+    copyDotFiles: function () {
       var self = this;
       [
         'babelrc',
         'eslintrc',
         'gitignore',
-        'editorconfig',
+        'editorconfig'
       ].forEach(function (fileName) {
         self.copy(fileName, self.componentName + '/.' + fileName);
       });
