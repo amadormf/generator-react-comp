@@ -21,6 +21,7 @@
     "postversion": "git push --follow-tags"
   },
   "devDependencies": {
+    "@kadira/storybook": "^2.13.0",
     "babel-cli": "^6.5.0",
     "babel-core": "^6.5.0",
     "babel-eslint": "^6.0.2",
@@ -41,7 +42,6 @@
     "eslint-plugin-jsx-a11y": "^0.6.2",
     "eslint-plugin-react": "^4.3.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "getstorybook": "^1.4.5",
     "git-url-parse": "^6.0.1",
     "isparta-loader": "^2.0.0",
     "istanbul-instrumenter-loader": "^0.2.0",
